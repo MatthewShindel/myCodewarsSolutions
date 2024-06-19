@@ -11,3 +11,23 @@ function firstNonRepeatingLetter(s) {
 	}
 	return "";
 }
+
+function scoreThrows(radii){
+  let bonus = 0;
+  let score = 0;
+  if(radii.length === 0) {
+    return 0;
+  }
+  for(let i = 0; i < radii.length; i++){
+    if(radii[i] < 5){
+      bonus ++;
+      score += 10;
+    }else if(radii[i] <= 10){
+      score += 5
+    }
+  }
+  if(bonus === radii.length){
+    score += 100
+  }
+  return score;
+}
