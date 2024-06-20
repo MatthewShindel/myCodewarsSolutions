@@ -31,3 +31,14 @@ function scoreThrows(radii){
   }
   return score;
 }
+
+var countBits = function(n) {
+  let binary = n.toString(2);
+  let count = 0;
+  for(let char of binary){
+    if(char === '1'){
+      count ++
+    }
+  }
+  return count
+};
