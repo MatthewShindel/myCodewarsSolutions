@@ -71,3 +71,18 @@ function findNb(m) {
 function digitalRoot(n) {
   return (n - 1) % 9 + 1;
 }
+
+function firstNonRepeatingLetter(s) {
+  const charCount = {};
+  for(let char of s){
+    const lowerChar = char.toLowerCase();
+    charCount[lowerChar] = (charCount[lowerChar] || 0) +1;
+  }
+  
+  for(let char of s){
+    if(charCount[char.toLowerCase()] === 1){
+      return char;
+    }
+  }
+  return ""
+}
