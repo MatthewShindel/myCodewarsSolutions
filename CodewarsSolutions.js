@@ -86,3 +86,15 @@ function firstNonRepeatingLetter(s) {
   }
   return ""
 }
+
+function alphabetPosition(text) {
+  let result = [];
+  for(let char of text){
+    let lowerChar = char.toLowerCase();
+    if(lowerChar >= 'a' && lowerChar <= 'z'){
+      let position = lowerChar.charCodeAt(0) - 'a'.charCodeAt(0) + 1;
+      result.push(position);
+    }
+  }
+  return result.join(' ')
+}
