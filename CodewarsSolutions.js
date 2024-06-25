@@ -122,3 +122,9 @@ function queueTime(customers, n) {
   }
   return Math.max(...tills)
 }
+
+function findOutlier(integers){
+  let odds = integers.filter(num => num % 2 ===0);
+  let evens = integers.filter(num => num % 2 !== 0);
+  return evens.length === 1 ? evens[0] : odds[0];
+}
