@@ -113,3 +113,12 @@ function bouncingBall(h,  bounce,  window) {
   }
   return count;
 }
+
+function queueTime(customers, n) {
+  let tills = Array(n).fill(0);
+  for(let time of customers){
+    let currentTill = tills.indexOf(Math.min(...tills));
+    tills[currentTill] += time;
+  }
+  return Math.max(...tills)
+}
