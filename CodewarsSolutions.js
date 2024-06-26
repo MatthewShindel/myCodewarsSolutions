@@ -128,3 +128,26 @@ function findOutlier(integers){
   let evens = integers.filter(num => num % 2 !== 0);
   return evens.length === 1 ? evens[0] : odds[0];
 }
+
+function dnaStrand(dna){
+  const complements = {
+    'A': 'T',
+    'T': 'A',
+    'C': 'G',
+    'G': 'C',
+  }
+  return dna.split('').map(base => complements[base]).join('');
+}
+
+function tribonacci(signature,n){
+  if (n === 0){
+    return [];
+  }
+  let result = signature.slice(0,n);
+  while(result.length < n){
+    let nextNumber = result.slice(-3).reduce((sum, num) =>sum + num,0);
+    result.push(nextNumber);
+  }
+  
+  return result;
+}
