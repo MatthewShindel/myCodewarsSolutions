@@ -69,85 +69,106 @@ function findNb(m) {
 }
 
 function digitalRoot(n) {
-  return (n - 1) % 9 + 1;
+	return (n - 1) % 9 + 1;
 }
 
 function firstNonRepeatingLetter(s) {
-  const charCount = {};
-  for(let char of s){
-    const lowerChar = char.toLowerCase();
-    charCount[lowerChar] = (charCount[lowerChar] || 0) +1;
-  }
-  
-  for(let char of s){
-    if(charCount[char.toLowerCase()] === 1){
-      return char;
-    }
-  }
-  return ""
+	const charCount = {};
+	for (let char of s) {
+		const lowerChar = char.toLowerCase();
+		charCount[lowerChar] = (charCount[lowerChar] || 0) + 1;
+	}
+
+	for (let char of s) {
+		if (charCount[char.toLowerCase()] === 1) {
+			return char;
+		}
+	}
+	return ""
 }
 
 function alphabetPosition(text) {
-  let result = [];
-  for(let char of text){
-    let lowerChar = char.toLowerCase();
-    if(lowerChar >= 'a' && lowerChar <= 'z'){
-      let position = lowerChar.charCodeAt(0) - 'a'.charCodeAt(0) + 1;
-      result.push(position);
-    }
-  }
-  return result.join(' ')
+	let result = [];
+	for (let char of text) {
+		let lowerChar = char.toLowerCase();
+		if (lowerChar >= 'a' && lowerChar <= 'z') {
+			let position = lowerChar.charCodeAt(0) - 'a'.charCodeAt(0) + 1;
+			result.push(position);
+		}
+	}
+	return result.join(' ')
 }
 
-function bouncingBall(h,  bounce,  window) {
-  if(h <= 0 || bounce <= 0 || bounce >= 1 || window >= h){
-    return -1
-  }
-  let count = 0;
-  while (h > window){
-    count ++
-    h *= bounce;
-    if(h > window){
-      count ++
-    }
-  }
-  return count;
+function bouncingBall(h, bounce, window) {
+	if (h <= 0 || bounce <= 0 || bounce >= 1 || window >= h) {
+		return -1
+	}
+	let count = 0;
+	while (h > window) {
+		count++
+		h *= bounce;
+		if (h > window) {
+			count++
+		}
+	}
+	return count;
 }
 
 function queueTime(customers, n) {
-  let tills = Array(n).fill(0);
-  for(let time of customers){
-    let currentTill = tills.indexOf(Math.min(...tills));
-    tills[currentTill] += time;
-  }
-  return Math.max(...tills)
+	// Create an array to keep track of the time remaining at each till
+	let tills = Array(n).fill(0);
+	// Iterate over each customer in the queue
+	for (let time of customers) {
+		// Find the till that will be free the earliest (with the minimum remaining time), using ...tills , a spread operator
+		// spread operators can use used to expand an iterable item such that i can look at the contents or an iterable.
+		let currentTill = tills.indexOf(Math.min(...tills));
+		// Add the customer's checkout time to this till
+		tills[currentTill] += time;
+	}
+	// The total time required is the maximum value in the tills array
+	return Math.max(...tills)
 }
 
-function findOutlier(integers){
-  let odds = integers.filter(num => num % 2 ===0);
-  let evens = integers.filter(num => num % 2 !== 0);
-  return evens.length === 1 ? evens[0] : odds[0];
+function findOutlier(integers) {
+	let odds = integers.filter(num => num % 2 === 0);
+	let evens = integers.filter(num => num % 2 !== 0);
+	return evens.length === 1 ? evens[0] : odds[0];
 }
 
-function dnaStrand(dna){
-  const complements = {
-    'A': 'T',
-    'T': 'A',
-    'C': 'G',
-    'G': 'C',
-  }
-  return dna.split('').map(base => complements[base]).join('');
+function dnaStrand(dna) {
+	const complements = {
+		'A': 'T',
+		'T': 'A',
+		'C': 'G',
+		'G': 'C',
+	}
+	return dna.split('').map(base => complements[base]).join('');
 }
 
-function tribonacci(signature,n){
-  if (n === 0){
-    return [];
+function tribonacci(signature, n) {
+	if (n === 0) {
+		return [];
+	}
+	let result = signature.slice(0, n);
+	while (result.length < n) {
+		let nextNumber = result.slice(-3).reduce((sum, num) => sum + num, 0);
+		result.push(nextNumber);
+	}
+
+	return result;
+}
+
+function narcissistic(value) {
+  let length = value.toString().length;
+  let digits = value.toString().split('');
+  let sum = 0;
+  for(let digit of digits){
+    console.log(`digit ${digit} length ${length}`)
+    sum += (Math.pow(digit,length));
+    console.log(sum)
   }
-  let result = signature.slice(0,n);
-  while(result.length < n){
-    let nextNumber = result.slice(-3).reduce((sum, num) =>sum + num,0);
-    result.push(nextNumber);
+  if(sum === value){
+    return true
   }
-  
-  return result;
+  return false;
 }
