@@ -172,3 +172,17 @@ function narcissistic(value) {
   }
   return false;
 }
+
+function minutesToMidnight(d){
+	//note, randomized tests were failling at random points, hard to to tell what the problem is
+  let currentHours = d.getHours();
+  let currentMinutes = d.getMinutes();
+  let minutesPassed =(currentHours * 60) + currentMinutes;
+  let timeUntilMidnight = 1440 - minutesPassed;
+  console.log(timeUntilMidnight)
+  let result = Math.round(timeUntilMidnight);
+  if(result > 1){
+    return(`${result} minutes`);
+  }
+  return(`${result} minute`)
+}
