@@ -208,3 +208,23 @@ function findEvenIndex(arr){
   }
   return -1
 }
+
+function breakingRecords(scores) {
+  // outpuit is 2 numbers, max and min in that order
+  // ignore first element, set max and min to first, them for each element after, check
+  //
+  let maxScore = scores[0];
+  let minScore = maxScore;
+  let timesMax = 0;
+  let timesMin = 0;
+  for(let i = 1; i < scores.length; i++){
+      if(maxScore < scores[i]){
+          maxScore = scores[i];
+          timesMax += 1;
+      }else if( minScore > scores[i]){
+          minScore = scores[i];
+          timesMin += 1;
+      }
+  }
+  return [timesMax, timesMin]
+}
