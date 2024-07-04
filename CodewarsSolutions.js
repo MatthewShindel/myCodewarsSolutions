@@ -249,3 +249,15 @@ function scoreThrows(radii) {
 	
 	return score;
 }
+
+function isPangram(string){
+  let alphabet = "abcdefghijklmnopqrstuvwxyz"
+  let lowerCaseString  = string.toLowerCase();
+  let letterSet = new Set();
+  for(let char of lowerCaseString){
+    if(alphabet.includes(char)){
+      letterSet.add(char)
+    }
+  }
+  return letterSet.size === 26
+}
