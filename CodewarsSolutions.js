@@ -228,3 +228,24 @@ function breakingRecords(scores) {
   }
   return [timesMax, timesMin]
 }
+
+function scoreThrows(radii) {
+	if (radii.length === 0) {
+		return 0;
+	}
+	
+	let score = 0;
+	for (const radius of radii) {
+		if (radius < 5) {
+			score += 10;
+		} else if (radius <= 10) {
+			score += 5;
+		}
+	}
+	
+	if (radii.every(radius => radius < 5)) {
+		score += 100;
+	}
+	
+	return score;
+}
