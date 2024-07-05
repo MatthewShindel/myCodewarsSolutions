@@ -270,3 +270,8 @@ function getMiddle(s){
     return s[middle]
   }
 }
+
+const binaryArrayToNumber = arr => {
+  let binary = arr.join('')
+  return parseInt(binary, 2)
+};
