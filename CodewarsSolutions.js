@@ -275,3 +275,12 @@ const binaryArrayToNumber = arr => {
   let binary = arr.join('')
   return parseInt(binary, 2)
 };
+
+function persistence(num) {
+	let count = 0;
+	while(num >= 10){
+		num = num.toString().split('').reduce((acc,curr) => acc * curr, 1);
+		count ++;
+	}
+ return count;
+}
