@@ -332,3 +332,42 @@ function reverseWords(str) {
 function descendingOrder(n){
   return parseInt(n.toString().split('').sort((a,b) => b-a).join(''), 10)
 }
+
+function sumArray(arr){
+  return arr.reduce((accumulator, current) => accumulator + current, 0)
+}
+
+console.log(sumArray([1, 2, 3, 4, 5])); // Output: 15
+console.log(sumArray([10, 20, 30]));    // Output: 60
+
+function productArray(arr){
+  return arr.reduce((accumulator, current) => accumulator * current, 1)
+}
+
+console.log(productArray([1, 2, 3, 4, 5])); // Output: 120
+console.log(productArray([2, 3, 4]));       // Output: 24
+
+function findLongestWord(arr){
+  return arr.reduce((accumulator, current) => current.length > accumulator.length ? current : accumulator)
+}
+
+console.log(findLongestWord(['apple', 'banana', 'cherry', 'date'])); // Output: 'banana'
+console.log(findLongestWord(['hello', 'world', 'javascript']));      // Output: 'javascript'
+
+function countOccurrences(arr){
+  return arr.reduce((acc, current) => {
+    acc[current] = (acc[current] || 0) + 1;
+    return acc;
+  }, {})
+}
+
+console.log(countOccurrences(['a', 'b', 'a', 'c', 'b', 'a'])); // Output: { a: 3, b: 2, c: 1 }
+console.log(countOccurrences([1, 2, 3, 1, 2, 1]));             // Output: { 1: 3, 2: 2, 3: 1 }
+
+function calculateAverage(arr){
+  let sum = arr.reduce((acc , current) => acc + current, 0);
+  return sum / arr.length;
+}
+
+console.log(calculateAverage([1, 2, 3, 4, 5])); // Output: 3
+console.log(calculateAverage([10, 20, 30, 40, 50])); // Output: 30
