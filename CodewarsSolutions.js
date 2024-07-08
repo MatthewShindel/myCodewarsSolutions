@@ -284,3 +284,47 @@ function persistence(num) {
 	}
  return count;
 }
+
+var solution = function(firstArray, secondArray) {
+  //decimals are viable answers
+  //negatives differences are positive when squared
+  //return the average (total / number of elements in array)
+  // arrays are the same length
+  let n = firstArray.length;
+  let totalOfSquares = 0;
+  for(let i = 0; i < n; i++){
+    let difference = firstArray[i]-secondArray[i];
+    totalOfSquares += difference * difference;
+  }
+  return totalOfSquares / n
+}
+
+var solution = function(firstArray, secondArray) {
+  // Use reduce to calculate the sum of squared differences
+  const totalOfSquares = firstArray.reduce((accumulator, current, index) => {
+    const difference = current - secondArray[index];
+    return accumulator + difference * difference;
+  }, 0);
+
+  // Calculate and return the average
+  return totalOfSquares / firstArray.length;
+};
+/*
+Here's a breakdown of the changes:
+
+Leveraging reduce: We use firstArray.reduce to iterate through each element (current) with its corresponding index (index).
+Accumulator and Callback Function:
+The first argument (accumulator) holds the accumulated value during each iteration. It's initialized to 0 (representing the initial sum of squares).
+The callback function takes three arguments:
+accumulator: The current accumulated value.
+current: The current element from firstArray.
+index: The index of the current element.
+Calculating Squared Difference: Inside the callback, we calculate the squared difference between the current element (current) and the corresponding element from secondArray using current - secondArray[index]. We square this difference using difference * difference.
+Updating Accumulator: The callback returns the updated accumulator by adding the squared difference to the current value. This way, accumulator keeps track of the total sum of squares across all elements.
+Calculating Average: After the loop (reduce), we calculate the average by dividing totalOfSquares by the length of the array (firstArray.length).
+This approach achieves the same functionality as your original loop, but with a more concise and functional style using reduce.
+*/
+
+function reverseWords(str) {
+  return str.split(' ').map(word => word.split('').reverse().join('')).join(' ')
+}
