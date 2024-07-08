@@ -371,3 +371,17 @@ function calculateAverage(arr){
 
 console.log(calculateAverage([1, 2, 3, 4, 5])); // Output: 3
 console.log(calculateAverage([10, 20, 30, 40, 50])); // Output: 30
+
+function narcissistic(value) {
+  // Code me to return true or false
+  //don't need error handling
+  // split number into an array, then do an for loop of each digit;
+  // input is non-zero integers
+  const length = value.toString().length;
+  const stringValue = value.toString()
+  let sum = 0;
+  for(let char of stringValue){
+    sum += Math.pow(parseInt(char), length);
+  }
+  return sum === value;
+}
