@@ -328,3 +328,7 @@ This approach achieves the same functionality as your original loop, but with a 
 function reverseWords(str) {
   return str.split(' ').map(word => word.split('').reverse().join('')).join(' ')
 }
+
+function descendingOrder(n){
+  return parseInt(n.toString().split('').sort((a,b) => b-a).join(''), 10)
+}
