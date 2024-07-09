@@ -409,3 +409,9 @@ function isIsogram(str){
   }
   return true;
 }
+
+
+//better isIsogram function:
+function isIsogram(str){
+	return new Set(str.toUpperCase()).size == str.length;
+}
