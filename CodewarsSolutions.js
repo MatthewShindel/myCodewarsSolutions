@@ -385,3 +385,15 @@ function narcissistic(value) {
   }
   return sum === value;
 }
+
+var uniqueInOrder=function(iterable){
+  let result = []
+  let previous;
+  for(let element of iterable){
+    if(element !== previous){
+      result.push(element);
+      previous = element;
+    }
+  }
+  return result
+}
