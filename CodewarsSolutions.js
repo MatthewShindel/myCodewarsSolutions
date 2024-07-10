@@ -428,3 +428,41 @@ function isTriangle(a,b,c){
   }
   return false;
 }
+
+function sortArray(array) {
+  const oddsOnlySorted = array.filter(num => num % 2 !== 0).sort((a,b) => a - b);
+  //sort odds only, put them in an array, and sort them so that is least to greatest
+  let oddIndex = 0;
+  //used to count the index of the oddsArray
+  return array.map(num => {
+    if(num % 2 !== 0){
+      return oddsOnlySorted[oddIndex++];
+      //only replace the odd values with stuff from the sorted array
+    }else{
+      return num
+    }
+  })
+}
+
+function highAndLow(numbers){
+  let numArray = numbers.split(' ').map(Number);
+  let sortedArray = numArray.sort((a,b) => b-a)
+  return (`${sortedArray[0]} ${sortedArray[sortedArray.length -1]}`)
+}
+function highAndLow(numbers){
+  numbers = numbers.split(' ');
+  return `${Math.max(...numbers)} ${Math.min(...numbers)}`;
+}
+
+function multiplesOf3And5(number){
+  if(number < 0){
+    return 0
+  }
+  let sum = 0;
+  for(let i = 0 ; i < number; i++){
+    if(i % 3 === 0 || i % 5 === 0){
+      sum += i
+    }
+  }
+  return sum
+}
