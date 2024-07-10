@@ -415,3 +415,7 @@ function isIsogram(str){
 function isIsogram(str){
 	return new Set(str.toUpperCase()).size == str.length;
 }
+
+function DNAtoRNA(dna) {
+  return dna.replace(/T/g, 'U')
+}
