@@ -466,3 +466,14 @@ function multiplesOf3And5(number){
   }
   return sum
 }
+
+function findShort(s){
+  let stringArray = s.split(' ');
+  return stringArray.reduce((smallest, current) => {
+    return current.length < smallest ? current.length : smallest;
+  }, Infinity)
+}
+
+function findShort(s){
+  return Math.min(...s.split(' ').map((s => s.length)))
+}
