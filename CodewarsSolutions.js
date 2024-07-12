@@ -477,3 +477,14 @@ function findShort(s){
 function findShort(s){
   return Math.min(...s.split(' ').map((s => s.length)))
 }
+
+function sum (numbers) {
+  return numbers.reduce((sum , a) => sum + a, 0)
+};
+
+function maskify(cc) {
+  if(cc.length <= 4){
+    return cc;
+  }
+  return '#'.repeat(cc.length -4) + cc.slice(-4)
+}
