@@ -488,3 +488,15 @@ function maskify(cc) {
   }
   return '#'.repeat(cc.length -4) + cc.slice(-4)
 }
+
+function cakes(recipe, available) {
+  let max = Infinity;
+  for(let ingredient in recipe){
+    if(!available[ingredient]){
+      return 0;
+    }
+    let possible = Math.floor(available[ingredient] / recipe[ingredient]);
+    max = Math.min(max, possible)
+  }
+  return max
+}
