@@ -531,3 +531,8 @@ function duplicateEncode(word){
   }
   return encodedString
 }
+
+function getCount(str) {
+  const vowels = new Set(['a','e','i','o','u'])
+  return str.split('').filter((letter) => vowels.has(letter)).length;
+}
