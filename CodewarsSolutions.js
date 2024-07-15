@@ -514,3 +514,20 @@ function XO(str) {
   }
   return xCount === oCount
 }
+
+function duplicateEncode(word){
+  word = word.toLowerCase();
+  let charCount = {}
+  for(let char of word){
+    charCount[char] = (charCount[char] || 0) + 1;
+  }
+  let encodedString  = ""
+  for(let char of word){
+    if(charCount[char] > 1){
+      encodedString += ')'
+    }else{
+      encodedString += '('
+    }
+  }
+  return encodedString
+}
