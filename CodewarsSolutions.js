@@ -553,3 +553,9 @@ function returnMissingNum(nums){
   }
   return nums[n-1] + 1
 }
+
+function isPangram(string) {
+  const alphabetList = [...'abcdefghijklmnopqrstuvwxyz'];
+
+  return alphabetList.every((letter) => string.toLowerCase().includes(letter));
+}
