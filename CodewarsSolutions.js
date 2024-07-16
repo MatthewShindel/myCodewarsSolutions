@@ -536,3 +536,20 @@ function getCount(str) {
   const vowels = new Set(['a','e','i','o','u'])
   return str.split('').filter((letter) => vowels.has(letter)).length;
 }
+
+function returnMissingNum(nums){
+  //sort the array in order
+  //compare each number to the last
+  nums = nums.sort((a,b) => a-b)
+  .filter(num => num > 0);
+  const n = nums.length;
+  if(nums[0] > 1 || n === 0){
+    return 1
+  }
+  for(let i = 0; i < nums.length; i++){
+    if(nums[i + 1] !== nums[i] + 1){
+      return nums[i] + 1;
+    }
+  }
+  return nums[n-1] + 1
+}
