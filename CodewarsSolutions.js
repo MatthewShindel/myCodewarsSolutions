@@ -559,3 +559,21 @@ function isPangram(string) {
 
   return alphabetList.every((letter) => string.toLowerCase().includes(letter));
 }
+
+function findTwoIndexes(array, target){
+  const map = {};
+  for(let i =0; i < array.length; i++){
+    const complement = target- array[i];
+    if(map.hasOwnProperty(complement)){
+      return [map[complement], i];
+    }
+    map[array[i]] = i;
+  }
+  return []
+}
+
+console.log(findTwoIndexes([5,2,3], 8))
+
+var uniqueInOrder=function(iterable){
+	return [...iterable].filter((a, i) => a !== iterable[i-1])
+}
