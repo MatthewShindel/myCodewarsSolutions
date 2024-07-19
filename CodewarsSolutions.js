@@ -587,3 +587,17 @@ function alphabetPosition(text) {
 
   return result.slice(0, result.length-1);
 }
+
+function tribonacci(signature,n){
+  let finalArray = []
+  if(!Array.isArray(signature)){
+    return finalArray
+  }
+  finalArray = finalArray.concat(signature)
+  for(let i = 0; i <= n - 4; i++){
+    let sum = 0;
+    sum += (finalArray[i] + finalArray[i+1] + finalArray[i+2]);
+    finalArray.push(sum)
+  }
+  return finalArray.splice(0, n)
+}
