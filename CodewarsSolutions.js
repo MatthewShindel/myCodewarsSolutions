@@ -601,3 +601,7 @@ function tribonacci(signature,n){
   }
   return finalArray.splice(0, n)
 }
+
+function sumMix(x){
+  return x.reduce((accumulator, current) => accumulator + parseInt(current), 0)
+}
