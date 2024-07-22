@@ -621,3 +621,9 @@ function simpleMultiplication(n) {
 const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
   return mpg * fuelLeft >= distanceToPump;
 };
+
+var number = function(busStops){
+  return busStops.reduce((peopleOnBus, [peopleGetOn, peopleGetOff]) => {
+    return peopleOnBus + peopleGetOn - peopleGetOff;
+  }, 0)
+}
