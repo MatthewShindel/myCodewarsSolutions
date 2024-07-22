@@ -617,3 +617,7 @@ function simpleMultiplication(number) {
 function simpleMultiplication(n) {
 	return n * (n % 2 ? 9 : 8);
 }
+
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+  return mpg * fuelLeft >= distanceToPump;
+};
