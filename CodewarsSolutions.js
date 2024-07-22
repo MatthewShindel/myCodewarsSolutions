@@ -605,3 +605,11 @@ function tribonacci(signature,n){
 function sumMix(x){
   return x.reduce((accumulator, current) => accumulator + parseInt(current), 0)
 }
+
+function simpleMultiplication(number) {
+	if(number % 2 === 0){
+		return number * 8;
+	}else{
+		return number * 9
+	}
+}
