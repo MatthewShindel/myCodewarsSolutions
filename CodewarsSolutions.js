@@ -613,3 +613,7 @@ function simpleMultiplication(number) {
 		return number * 9
 	}
 }
+
+function simpleMultiplication(n) {
+	return n * (n % 2 ? 9 : 8);
+}
