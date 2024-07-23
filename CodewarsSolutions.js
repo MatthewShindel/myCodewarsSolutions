@@ -627,3 +627,12 @@ var number = function(busStops){
     return peopleOnBus + peopleGetOn - peopleGetOff;
   }, 0)
 }
+
+var countBits = function(n) {
+  // input is non-negative
+  // input the count of '1' in the binary representation
+  // retunr a number
+  // convert n to binary
+  //for each character, count number of '1' thenr return it
+  return [... n.toString(2)].reduce((sum,num) => sum + parseInt(num), 0)
+};
