@@ -636,3 +636,9 @@ var countBits = function(n) {
   //for each character, count number of '1' thenr return it
   return [... n.toString(2)].reduce((sum,num) => sum + parseInt(num), 0)
 };
+
+var countBits = function(n) {
+  // Convert n to a binary string and then to an array of characters
+  // Reduce the array, summing 1s directly
+  return [...n.toString(2)].reduce((sum, bit) => sum + (bit === '1' ? 1 : 0), 0);
+};
