@@ -642,3 +642,21 @@ var countBits = function(n) {
   // Reduce the array, summing 1s directly
   return [...n.toString(2)].reduce((sum, bit) => sum + (bit === '1' ? 1 : 0), 0);
 };
+
+function alphabetPosition(text) {
+  return text
+  .toLowerCase().split('').filter(char => char >= 'a' && char <= 'z')
+  .map(char => char.charCodeAt(0)-96)
+  .join(' ')
+}
+
+function likes(names) {
+  const patterns = [
+    "no one likes this",
+    `${names[0]} likes this`,
+    `${names[0]} and ${names[1]} like this`,
+    `${names[0]}, ${names[1]} and ${names[2]} like this`,
+    `${names[0]}, ${names[1]} and ${names.length -2} others like this`
+  ]
+  return patterns[Math.min(names.length ,4)]
+}
