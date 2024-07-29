@@ -660,3 +660,14 @@ function likes(names) {
   ]
   return patterns[Math.min(names.length ,4)]
 }
+
+var solution = function(firstArray, secondArray) {
+
+  var arr = [];
+
+  for (var i = 0; i < firstArray.length; i++) {
+    arr.push(Math.pow(secondArray[i] - firstArray[i], 2));
+  }
+  return arr.reduce((a,b) => a+b)/arr.length;
+
+}
