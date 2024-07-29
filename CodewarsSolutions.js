@@ -671,3 +671,7 @@ var solution = function(firstArray, secondArray) {
   return arr.reduce((a,b) => a+b)/arr.length;
 
 }
+
+function descendingOrder(n){
+  return Number([...n.toString()].sort((a,b) => b-a).join(''))
+}
