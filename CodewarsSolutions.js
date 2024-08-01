@@ -675,3 +675,17 @@ var solution = function(firstArray, secondArray) {
 function descendingOrder(n){
   return Number([...n.toString()].sort((a,b) => b-a).join(''))
 }
+
+function tribonacci(signature, n) {
+  if (n === 0) {
+    return [];
+  }
+  
+  let result = signature.slice(0, n);
+  
+  for (let i = 3; i < n; i++) {
+    result.push(result[i-1] + result[i-2] + result[i-3]);
+  }
+  
+  return result;
+}
