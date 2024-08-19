@@ -704,3 +704,7 @@ function isPangram(string){
     return string.indexOf(x) !== -1;
   });
 }
+
+function countBits(n) {
+  return n.toString(2).split('0').join('').length;
+};
