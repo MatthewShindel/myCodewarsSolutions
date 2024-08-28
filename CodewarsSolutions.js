@@ -708,3 +708,18 @@ function isPangram(string){
 function countBits(n) {
   return n.toString(2).split('0').join('').length;
 };
+
+function deleteNth(arr,n){
+  const countMap = {}
+  const result  = [];
+  for(let num of arr) {
+    if(countMap[num] === undefined){
+      countMap[num] = 0;
+    }
+    if(countMap[num] < n){
+      result.push(num);
+      countMap[num]++;
+    }
+  }
+  return result;
+}
