@@ -743,4 +743,6 @@ function positiveSum(arr) {
   return arr.reduce((sum, num) => num > 0 ? sum + num : sum, 0)
 }
 
-
+function summation(num) {
+  return num * (num + 1) / 2
+}
