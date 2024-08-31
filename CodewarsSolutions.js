@@ -746,3 +746,58 @@ function positiveSum(arr) {
 function summation(num) {
   return num * (num + 1) / 2
 }
+
+function removeChar(str){
+  return str.substring(1, str.length -1)
+};
+
+function removeChar(str) {
+  return str.slice(1, -1);
+}// both remove the first and last char of a string
+
+function basicOp(operation, value1, value2){
+  switch (operation){
+    case '+':
+      return value1 + value2;
+      break;
+    case '-':
+      return value1 - value2;
+      break;
+    case '*':
+      return value1 * value2;
+      break;
+    case '/':
+      return value1 / value2;
+      break;
+  }
+}
+
+function basicOp(o, a, b) {
+  return eval(a+o+b);//better, more concise version of the above. need to look into what eval does
+}
+
+function evenOrOdd(number) {
+  return number % 2 === 0 ? 'Even' : 'Odd';
+}
+
+function getGrade (s1, s2, s3) {
+  let avg = Math.floor((s1+s2+s3)/30);
+  switch(avg){
+      case 10:
+      case 9:
+      return 'A';
+      case 8:
+      return 'B';
+      case 7:
+      return 'C';
+      case 6:
+      return 'D';
+      default:
+      return 'F'
+  }
+}
+
+function getGrade (s1, s2, s3) {
+  var s = (s1 + s2 + s3) / 3
+  return s >= 90 ? "A" : s >= 80 ? "B" : s >= 70 ? "C" : s >= 60 ? "D" : "F"
+}
