@@ -799,5 +799,23 @@ function getGrade (s1, s2, s3) {
 
 function getGrade (s1, s2, s3) {
   var s = (s1 + s2 + s3) / 3
-  return s >= 90 ? "A" : s >= 80 ? "B" : s >= 70 ? "C" : s >= 60 ? "D" : "F"
+  return s >= 90 ? "A" : s >= 80 ? "B" : s >= 70 ? "C" : s >= 60 ? "D" : "F" //ternary operator
+}
+
+function greet (name, owner) {
+  return name === owner ? 'Hello boss': 'Hello guest'
+}
+
+var countSheep = function (num){
+  let count = 0;
+  let sheep = ''
+  while (count < num) {
+    count++;
+    sheep += `${count} sheep...`
+  }
+  return sheep;
+}
+
+function solution(str){
+  return str.split('').reverse().join('')
 }
