@@ -7,3 +7,7 @@ export default function minBy(array, iteratee) {
     return iteratee(currentElement) < iteratee(minElement) ? currentElement : minElement;
   });
 }
+
+export default function functionLength(fn) {
+  return fn.length
+}
